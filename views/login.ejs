@@ -14,7 +14,7 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom styles for this template -->
     <link href="css/signin.css" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body class="text-center">
@@ -23,7 +23,7 @@
             <img class="mb-4" src="img/bootstrap-logo.svg" alt="bootstrap-logo" width="72" height="57">
             <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
             <div class="form-floating">
-                <input type="text" class="form-control" name="name" placeholder="Enter your user">
+                <input type="text" class="form-control" name="user" placeholder="Enter your user">
                 <label for="user">User</label>
             </div>
             <div class="form-floating">
@@ -34,8 +34,22 @@
             <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
         </form>
         <br>
-        <a type="button" class="w-100 btn btn-lg btn-primary">signIn</a>
+        <a href="/register">Create account</a>
     </main>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <% if(alert) { %>
+        <script>
+            Swal.fire({
+                title: '<%= alertTitle %>',
+                text: '<%=  alertMessage %>',
+                icon: '<%= alertIcon %>',
+                showConfirmButton: <%= showConfirmButton %>,
+                timer: <%= timer %>
+            }).then(() => {
+                window.location = '/<%= ruta %>'
+            })
+        </script>
+        <% } %>
 </body>
 
 </html>

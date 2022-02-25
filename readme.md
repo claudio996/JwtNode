@@ -53,6 +53,8 @@
 - templates
 - make references to folder css-js-img etc.
 - create forms.
+# working in controller
+- created file auth
 
   
   
